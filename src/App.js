@@ -1,7 +1,8 @@
 function App() {
   const submit = (e) =>{
     e.preventDefault()
-    console.log(Array.from(new FormData(e.target)))
+    const Data = Array.from(new FormData(e.target))
+    console.log(Object.fromEntries(Data))
   }
   return (
     <form onSubmit={submit}>
