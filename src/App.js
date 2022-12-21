@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 const App = () => {
-    const [value,setValue] = useState({normal:'por defecto' , texto: '' })
+    const [value,setValue] = useState({normal:'por defecto' , texto: '' , select:''})
     const handleChange = (e) =>{
         console.log(e.target.name)
        setValue((state) => ({
@@ -15,6 +15,13 @@ const App = () => {
             {value.length < 5 ? <span>longitud minima de 5</span> : null}
             <input name='normal' type='text' value={value.normal} onChange={handleChange} />
             <textarea name='texto' value={value.texto}  onChange={handleChange}/>
+            <select value={value.select} name='select' onChange={handleChange}>
+                <option value=''> --- Seleccione ---</option>
+                <option value='chanchofeliz'> Chancho Feliz</option>
+                <option value='chanchitofeliz'> Chanchito Feliz</option>
+                <option value='chanchitotriste'> Chanchito Triste</option>
+                <option value='felipe'> Felipe</option>
+            </select>
         </div>
     )
 }
